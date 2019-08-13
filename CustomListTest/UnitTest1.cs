@@ -9,6 +9,14 @@ namespace CustomListTest
         [TestMethod]
         public void TestMethod1()
         {
+            //arrange
+            //custom list
+
+            //act
+
+
+            //assert
+
         }
     }
 }
