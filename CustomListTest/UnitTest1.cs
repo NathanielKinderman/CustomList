@@ -77,6 +77,29 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
+        // write a test for when the array size changes (what is you array's starting size?)
+        [TestMethod]
+        public void Add_ToChangeCapacitySize()
+        {
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 8;
+            int actual;
+
+            //add 5 items and check last spot 
+
+            //act
+            testList.Add(5);
+            testList.Add(5);
+            testList.Add(5);
+            testList.Add(5);
+            testList.Add(5);
+            actual =  testList.capacity;
+
+            //assert
+            Assert.AreEqual(expected, actual); 
+        }
+
 
 
     }

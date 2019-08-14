@@ -13,6 +13,8 @@ namespace CustomList
 
         static void Main(string[] args)
         {
+            CustomList<int> poop = new CustomList<int>();
+            poop.Add(1);
         }
     }
 }

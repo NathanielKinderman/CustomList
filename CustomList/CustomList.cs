@@ -11,6 +11,7 @@ namespace CustomList
     public class CustomList<T>
     {
         public int count;
+        public int capacity;
 
 
 
@@ -29,19 +30,38 @@ namespace CustomList
 
         public CustomList()
         {
-            items = new T[4];
+            capacity = 4;
+            items = new T[capacity];
             count = 0;
+            
         }
 
 
         public void Add(T itemToAdd)
         {
+            if (count == capacity)
+            {
+                IncreaseCapacity();
+            }
+
             items[count] = itemToAdd;
             count++;
         }
 
-        }
 
+        private void IncreaseCapacity()
+        {
+
+            T[] SecondArray = new T[capacity * 2];
+            for (int i = 0; i < capacity; i++)
+            {
+                SecondArray[i] = items[i];
+            }
+
+            capacity *= 2;
+            items = SecondArray;
+        }
+    }
 
     
 }
