@@ -70,7 +70,7 @@ namespace CustomListTest
 
             //act
             testList.Add(2345);
-            actual = testList.count;
+            actual = testList.Count;
 
 
             //assert
