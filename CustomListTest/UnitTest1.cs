@@ -10,9 +10,9 @@ namespace CustomListTest
         [TestMethod]
         public void Add_ToAnEmptyList_ItemGoesToIndexZero()
         {
-        //arrange
-        //to add an object
-        CustomList<int> testList = new CustomList<int>();
+            //arrange
+            //to add an object
+            CustomList<int> testList = new CustomList<int>();
             int expected = 1;
             int actual;
 
@@ -94,12 +94,120 @@ namespace CustomListTest
             testList.Add(5);
             testList.Add(5);
             testList.Add(5);
-            actual =  testList.capacity;
+            actual = testList.capacity;
 
             //assert
-            Assert.AreEqual(expected, actual); 
+            Assert.AreEqual(expected, actual);
         }
 
+
+
+        [TestMethod]
+        public void Remove_AddItemToList_ThenRemoveOneInstanceOfObject_EntireListCountIsZero()
+        {
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected =0;
+            int actual;
+
+
+            //act
+            testList.Add(2);
+            testList.Remove(2);
+            actual = testList.Count;
+            
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_AddMultipleItemsToList_RemoveOnlyThatLastInstanceOfObject()
+        {
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 2;
+            int actual;
+
+
+            //act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(2);
+            testList.Remove(2);
+            actual = testList.Count;
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void Remove_AddMultpileItemsInARandomOrder_RemoveOnlyThatInstanceOfObject()
+        {
+
+            //arrange
+             CustomList<int> testList = new CustomList<int>();
+            int expected = 4;
+            int actual;
+
+            //act
+            testList.Add(2);
+            testList.Add(4);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
+            testList.Remove(3);
+            actual = testList.Count;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Remove_AddMultpileItemsInARandomOrder_RemoveObjectAtTheIndex1AndSeeIfEverythingShift()
+        {
+
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 4;
+            int actual;
+
+            //act
+            testList.Add(2);
+            testList.Add(4);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
+            testList.Remove(2);
+            actual = testList[0];
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void Remove_AddAnItem_RemoveAnItemFromTheLastSpot_AndCheckIfIndexIsAtDefault()
+        {
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 3;
+            int actual;
+
+            //act
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Remove(4);
+            actual = testList[1];
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+
+        }
 
 
     }

@@ -10,9 +10,10 @@ namespace CustomList
 
     public class CustomList<T>
     {
-        public int count;
+        private int count;
         public int capacity;
 
+        public int Count { get { return count; } }
 
 
         private T[] items;
@@ -62,6 +63,12 @@ namespace CustomList
             items = SecondArray;
         }
     }
+        
+        public void Remove(T itemsToRemove)
+        {
+
+
+        }
 
     
 }
