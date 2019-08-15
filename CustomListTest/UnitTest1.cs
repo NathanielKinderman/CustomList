@@ -209,6 +209,24 @@ namespace CustomListTest
 
         }
 
+        [TestMethod]
+        public void ConvertToString_TakeANumber_ReturnTheStringNumber()
+        {
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            string expected = "3";
+            int actual;
 
+
+            //act
+            testList.ToString(3);
+            actual = testList("3");
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+
+        }
     }
 }
