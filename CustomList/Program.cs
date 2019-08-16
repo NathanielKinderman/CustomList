@@ -13,13 +13,12 @@ namespace CustomList
 
         static void Main(string[] args)
         {
-            CustomList<int> customList = new CustomList<int>();
-            customList.Add(1);
-
-            customList.Add(1);
-            customList.Add(2);
-            customList.Add(2);
-            customList.Remove(2);
+            CustomList<int> testList = new CustomList<int>();
+            testList.Add(3);
+           //testList.Add(4);
+            Console.WriteLine(testList.ToString());
+            Console.ReadLine();
+            //actual = testList[0];
         }
     }
 }

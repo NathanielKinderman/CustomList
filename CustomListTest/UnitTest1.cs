@@ -215,18 +215,60 @@ namespace CustomListTest
             //arrange
             CustomList<int> testList = new CustomList<int>();
             string expected = "3";
-            int actual;
+            string actual;
 
 
             //act
-            testList.ToString(3);
-            actual = testList("3");
+            testList.Add(3);
+
+            actual = testList.ToString();
 
 
             //assert
             Assert.AreEqual(expected, actual);
 
 
+        }
+
+        [TestMethod]
+        public void ConvertToString_TakeADouble_ReturnTheStringDouble()
+        {
+            //arrange
+            CustomList<double> testList = new CustomList<double>();
+            string expected = "12.34";
+            string actual;
+
+
+            //act
+            testList.Add(12.34);
+            
+            actual = testList.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+                       
+        }
+
+        [TestMethod]
+        public void ConvertToString_CreateAListToHoldManyCharacters_GetCountOfStrings()
+        {
+            //arrange
+            CustomList<string> testList = new CustomList<string>();
+            int expected = 3;
+            int actual;
+
+
+            //act
+            testList.Add("ABC");
+            testList.Add("DEF");
+            testList.Add("GHI");
+            
+            actual = testList.Count;
+
+
+            //assert
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

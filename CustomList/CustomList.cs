@@ -74,31 +74,49 @@ namespace CustomList
                 if (itemsToRemove.Equals(items[i]) && IsEqual == false)
                 {
                     IsEqual = true;
-                   if(i < count - 1 )
-                   {         items[i] = items [i + 1];     
+                    if (i < count - 1)
+                    {
+                        items[i] = items[i + 1];
 
-                   }
-                   else 
-                   {
+                    }
+                    else
+                    {
                         items[i] = default;
-                   }
-                   count--;  
+                    }
+                    count--;
 
                 }
 
                 else
                 {
                     IsEqual = false;
-                } 
+                }
             }
-
-
-        //make a new array in method empty to start. loop over items over time. check if its the items match seach. move everything to new array and left search in current array. 
-
-        //[count] = itemToRemove;
-        //     count--;
         }
 
-    }
-    
+        public override string ToString()
+        {
+            string NewString = "";
+            
+            for (int i = 0; i < count; i++)
+            {
+                NewString += items[i].ToString();
+                
+
+
+                //Result = SB.Append;
+                //SB.Append([i].ToString());
+                //Console.WriteLine(SB.ToString());
+            }
+            return NewString;
+
+        }
+
+
+    }  
+       
 }
+
+    
+    
+
