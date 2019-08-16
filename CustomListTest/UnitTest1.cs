@@ -458,7 +458,118 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual.ToLower());
 
         }
+        //.zip take list one and list two and put the items in both in a new list 
 
+        [TestMethod]
+        public void Zip_TwoListOfInt_CombineBothList()
+        {
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            string expected = "123456";
+            string actual;
+
+
+
+            //act
+            testList.Add("1");
+            testList.Add("3");
+            testList.Add("5");
+            testList2.Add("2");
+            testList2.Add("4");
+            testList2.Add("6");
+            actual = testList.Zip(testList2);
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
+
+
+        }
+
+        [TestMethod]
+        public void Zip_TwoListOfString_CombineBothList()
+        {
+            //arrange
+            CustomList<string> testList = new CustomList<string>();
+            CustomList<string> testList2 = new CustomList<string>();
+            string expected = "TheCatInTheHat";
+            string actual;
+
+
+
+            //act
+            testList.Add("The");
+            testList.Add("In");
+            testList.Add("Hat");
+            testList2.Add("Cat");
+            testList2.Add("The");
+           
+            actual = testList.Zip(testList2);
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
+
+
+        }
+
+        [TestMethod]
+        public void Zip_TwoListOfIntDifferentSizes_CombineBothList()
+        {
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            string expected = "12345";
+            string actual;
+
+
+
+            //act
+            testList.Add("1");
+            testList.Add("3");
+            testList.Add("5");
+            testList2.Add("2");
+            testList2.Add("4");
+            
+            actual = testList.Zip(testList2);
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
+
+
+        }
+
+
+        [TestMethod]
+        public void Zip_TwoListOfIntOneListIsEmpty_CombineBothList()
+        {
+            //arrange
+            CustomList<int> testList = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            string expected = "135";
+            string actual;
+
+
+
+            //act
+            testList.Add("1");
+            testList.Add("3");
+            testList.Add("5");
+            
+            actual = testList.Zip(testList2);
+
+
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
+
+
+        }
 
 
     }   
