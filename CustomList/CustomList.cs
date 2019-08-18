@@ -103,12 +103,42 @@ namespace CustomList
                 NewString += items[i].ToString();
                 
 
-
-                //Result = SB.Append;
-                //SB.Append([i].ToString());
-                //Console.WriteLine(SB.ToString());
             }
             return NewString;
+
+        }
+
+
+        public override OverloadAdditionOperator()
+        {
+            ///i want to add two lists together and return the results in a new object list
+            T[] SecondArray = new T[capacity];
+            T[] FinalArray = items[i] + SecondArray[i];
+            
+            items.Add(SecondArray);
+
+
+
+        }
+
+
+        public override OverloadSubractionOperator()
+        { //i want to combine to lists together and remove the same instence of an object and return the new list in a different array
+
+
+
+
+
+        }
+
+
+        public void ZipListTogether()
+        {
+            //i want to combine two list together and have the indices alternating
+
+
+            items[T].Add(SecondArray);
+
 
         }
 
