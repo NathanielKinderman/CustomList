@@ -109,22 +109,36 @@ namespace CustomList
         }
 
 
-        public override OverloadAdditionOperator()
+        public void OverloadAdditionOperator()
         {
             ///i want to add two lists together and return the results in a new object list
             T[] SecondArray = new T[capacity];
-            T[] FinalArray = items[i] + SecondArray[i];
-            
-            items.Add(SecondArray);
+            T[] FinalArray;
+            for (int i = 0; i < count; i++)
+            {
+                items[i].Add(SecondArray[i]);
 
+            }
+            //items.Add(SecondArray);
+            return  FinalArray;
 
 
         }
 
 
-        public override OverloadSubractionOperator()
-        { //i want to combine to lists together and remove the same instence of an object and return the new list in a different array
+        public void OverloadSubractionOperaton()
+        { 
+            //i want to combine to lists together and remove the same instence of an object and return the new list in a different array
+            T[] SecondArray = new T[capacity];
+            T[] FinalArray;
+            for (int i = 0; i < count; i++)
+            {
+                items[i].Remove(SecondArray[i]);
+                items = FinalArray;
+            }
 
+            //items.Remove(SecondArray);
+            return FinalArray;
 
 
 
@@ -135,10 +149,14 @@ namespace CustomList
         public void ZipListTogether()
         {
             //i want to combine two list together and have the indices alternating
+            T[] SecomdArray = new T[capacity];
+            T[] FinalArray;
+            for (int i = 0; i < count; i++)
+            {
 
-
-            items[T].Add(SecondArray);
-
+                items[T].Add(SecondArray);
+            }
+            reutn FinalArray;
 
         }
 

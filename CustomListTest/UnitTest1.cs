@@ -511,7 +511,7 @@ namespace CustomListTest
 
 
             //assert
-            Assert.AreEqual(expected, actual[]2);
+            Assert.AreEqual(expected, actual[2]);
 
 
         }
@@ -522,8 +522,8 @@ namespace CustomListTest
             //arrange
             CustomList<int> testList = new CustomList<int>();
             CustomList<int> testList2 = new CustomList<int>();
-            string expected = "12345";
-            string actual;
+            string expected = 3;
+            CustomList<int> actual = new CustomList<int>();
 
 
 
@@ -539,7 +539,7 @@ namespace CustomListTest
 
 
             //assert
-            Assert.AreEqual(expected, actual.ToString());
+            Assert.AreEqual(expected, actual[2]);
 
 
         }
