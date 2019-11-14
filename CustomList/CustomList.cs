@@ -97,11 +97,11 @@ namespace CustomList
         public override string ToString()
         {
             string NewString = "";
-            
+
             for (int i = 0; i < count; i++)
             {
                 NewString += items[i].ToString();
-                
+
 
             }
             return NewString;
@@ -109,60 +109,80 @@ namespace CustomList
         }
 
 
-        public void OverloadAdditionOperator()
+        public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T> listTwo)
         {
             ///i want to add two lists together and return the results in a new object list
-            T[] SecondArray = new T[capacity];
-            T[] FinalArray;
-            for (int i = 0; i < count; i++)
+            CustomList<T> result = new CustomList<T>();
+            for (int i = 0; i < listOne.count; i++)
             {
-                items[i].Add(SecondArray[i]);
-
+                result.Add(listOne[i]);
             }
-            //items.Add(SecondArray);
-            return  FinalArray;
-
-
+            for (int j = 0; j < listTwo.count; j++)
+            {
+                result.Add(listTwo[j]);
+            }
+            return result;
         }
 
 
-        public void OverloadSubractionOperaton()
-        { 
-            //i want to combine to lists together and remove the same instence of an object and return the new list in a different array
-            T[] SecondArray = new T[capacity];
-            T[] FinalArray;
-            for (int i = 0; i < count; i++)
+
+
+        public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            ///i want to add two lists together and return the results in a new object list
+            CustomList<T> result = new CustomList<T>();
+            for (int i = 0; i < listOne.count; i++)
             {
-                items[i].Remove(SecondArray[i]);
-                items = FinalArray;
+                for(int j =0; j<listTwo.count; j++)
+                {
+                    if (listOne[i].Equals(listTwo[j]))
+                    {
+                        break;
+                    }
+                    else if (j== listTwo.count)
+                    {
+                        result.Add(listOne[i]);
+                    }
+                }
+                
             }
-
-            //items.Remove(SecondArray);
-            return FinalArray;
-
-
-
-
+            return result;
         }
 
 
-        public void ZipListTogether()
+        public static CustomList<T> ZipListTogether(CustomList<T> listOne, CustomList<T> listTwo)
         {
             //i want to combine two list together and have the indices alternating
-            T[] SecomdArray = new T[capacity];
-            T[] FinalArray;
-            for (int i = 0; i < count; i++)
-            {
+            //use overloaded + operator and somehow have the indices from both lists alternate
+            //one list is odd numbers and the other even number
 
-                items[T].Add(SecondArray);
+            CustomList<T> zipResult = new CustomList<T>();
+            for(int i =0; i < listOne.Count || i < listTwo.Count; i++)
+            {
+                if( i < listOne.Count)
+                {
+
+                    zipResult.Add(listOne[i]); 
+                }
+                if(i < listTwo.Count)
+                {
+                    zipResult.Add(listTwo[i]);
+
+
+                }
+
             }
-            reutn FinalArray;
+            return zipResult;
 
         }
 
 
-    }  
-       
+
+
+
+
+    }
+
 }
 
     
