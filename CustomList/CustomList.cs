@@ -117,9 +117,9 @@ namespace CustomList
             {
                 result.Add(listOne[i]);
             }
-            for (int j = 0; j < listTwo.count; j++)
+            for (int i = 0; i < listTwo.count; i++)
             {
-                result.Add(listTwo[j]);
+                result.Add(listTwo[i]);
             }
             return result;
         }
@@ -174,6 +174,13 @@ namespace CustomList
             }
             return zipResult;
 
+        }
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                yield return items[i];
+            }
         }
 
 
